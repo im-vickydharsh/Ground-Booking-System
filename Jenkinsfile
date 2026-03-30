@@ -30,7 +30,7 @@ pipeline {
         stage('Backend Check') {
             steps {
                 dir('backend') {
-                    sh 'node -e "console.log(\"Backend OK\")"'
+                    sh 'node -e "console.log(\'Backend OK\')"'
                 }
             }
         }
