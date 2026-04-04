@@ -14,6 +14,15 @@ async function seed() {
     const baseName = 'Chennai Sports Ground';
     const types = ['cricket', 'football', 'badminton', 'tennis', 'basketball', 'other'];
 
+    const sportImages = {
+      cricket: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=800&q=80',
+      football: 'https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80',
+      badminton: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?w=800&q=80',
+      tennis: 'https://images.unsplash.com/photo-1595435934249-5df7ed86e1f0?w=800&q=80',
+      basketball: 'https://images.unsplash.com/photo-1546519638-32c0d83b6c31?w=800&q=80',
+      other: 'https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=800&q=80'
+    };
+
     for (let i = 1; i <= 100; i++) {
       const type = types[i % types.length];
       grounds.push({
@@ -23,7 +32,7 @@ async function seed() {
         address: `Area ${i}, Chennai 6000${String(i).padStart(2, '0')}`,
         description: `Sample ${type} ground ${i} in Chennai.`,
         facilities: ['Parking', 'Changing rooms', 'Lights'],
-        imageUrl: `https://picsum.photos/seed/chennai-${i}/800/600`,
+        imageUrl: sportImages[type],
         pricePerHour: 500 + (i % 5) * 100,
         isActive: true,
         approvalStatus: 'approved',
